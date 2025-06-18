@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogProject\Microservices.Posts.API.csproj" />
+    <ProjectReference Include="..\Microservices.Posts.API\Microservices.Posts.API.csproj" />
     <ProjectReference Include="..\Microservices.Posts.Core\Microservices.Posts.Core.csproj" />
     <ProjectReference Include="..\Microservices.Posts.Domain\Microservices.Posts.Domain.csproj" />
     <ProjectReference Include="..\Microservices.Posts.SqlServerConnection\Microservices.Posts.SqlServerConnection.csproj" />

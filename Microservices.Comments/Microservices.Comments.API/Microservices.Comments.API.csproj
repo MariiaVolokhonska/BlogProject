@@ -25,7 +25,6 @@
     <ProjectReference Include="..\Microservices.Comments.Core\Microservices.Comments.Core.csproj" />
     <ProjectReference Include="..\Microservices.Comments.Domain\Microservices.Comments.Domain.csproj" />
     <ProjectReference Include="..\Microservices.Comments.SqlServerConnection\Microservices.Comments.SqlServerConnection.csproj" />
-    <ProjectReference Include="..\Microservices.Comments.UnitTests\Microservices.Comments.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

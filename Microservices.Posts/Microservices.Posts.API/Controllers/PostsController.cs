@@ -15,7 +15,6 @@ namespace Microservices.Posts.API.Controllers
             _service = service;
         }
 
-        // GET: api/posts
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PostDto>>> GetAll()
         {
@@ -23,7 +22,6 @@ namespace Microservices.Posts.API.Controllers
             return Ok(posts);
         }
 
-        // GET: api/posts/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<PostDto>> GetById(Guid id)
         {
@@ -38,7 +36,6 @@ namespace Microservices.Posts.API.Controllers
             }
         }
 
-        // POST: api/posts
         [HttpPost]
         public async Task<ActionResult<PostDto>> Create([FromBody] PostDto dto)
         {
@@ -53,7 +50,6 @@ namespace Microservices.Posts.API.Controllers
             }
         }
 
-        // PATCH: api/posts/{id}
         [HttpPatch("{id}")]
         public async Task<ActionResult<PostDto>> Update(Guid id, [FromBody] PostDto dto)
         {
@@ -68,7 +64,6 @@ namespace Microservices.Posts.API.Controllers
             }
         }
 
-        // DELETE: api/posts/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult<PostDto>> Delete(Guid id)
         {
