@@ -1,0 +1,6 @@
+@Microservices.Comments.API_HostAddress = http://localhost:5197
+
+GET {{Microservices.Comments.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

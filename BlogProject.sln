@@ -1,9 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogProject", "BlogProject\BlogProject.csproj", "{850E2486-DECD-49FD-8640-1D05A73D884E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Posts.API", "BlogProject\Microservices.Posts.API.csproj", "{850E2486-DECD-49FD-8640-1D05A73D884E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Posts.Domain", "Microservices.Posts.Domain\Microservices.Posts.Domain.csproj", "{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices.Posts", "Microservices.Posts", "{458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices.Comments", "Microservices.Comments", "{D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Posts.Core", "Microservices.Posts.Core\Microservices.Posts.Core.csproj", "{4479E59D-AC34-46A6-B454-88CA62E20C21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Posts.SqlServerConnection", "Microservices.Posts.SqlServerConnection\Microservices.Posts.SqlServerConnection.csproj", "{888575AB-141D-4D42-9859-A10BB7706A51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Posts.UnitTests", "Microservices.Posts.UnitTests\Microservices.Posts.UnitTests.csproj", "{6FAA181A-FEE9-43E3-A39C-03A34EAC9431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.API", "Microservices.Comments.API\Microservices.Comments.API.csproj", "{33FEBCD4-E117-457B-8144-96D5C98F237B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.Domain", "Microservices.Comments.Domain\Microservices.Comments.Domain.csproj", "{1F303AB9-AABD-41A9-BE21-6F80C93B6D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.Core", "Microservices.Comments.Core\Microservices.Comments.Core.csproj", "{024D9F68-92C4-4E95-968F-6DA0A4CFE399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.SqlServerConnection", "Microservices.Comments.SqlServerConnection\Microservices.Comments.SqlServerConnection.csproj", "{F25B7449-3A06-44C2-999B-AA932C5EB819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.UnitTests", "Microservices.Comments.UnitTests\Microservices.Comments.UnitTests.csproj", "{ADAEC874-4152-4865-8743-4CB6B85F15E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Comments.Infrastructure", "Microservices.Comments.Infrastructure\Microservices.Comments.Infrastructure.csproj", "{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +41,64 @@ Global
 		{850E2486-DECD-49FD-8640-1D05A73D884E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850E2486-DECD-49FD-8640-1D05A73D884E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850E2486-DECD-49FD-8640-1D05A73D884E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4479E59D-AC34-46A6-B454-88CA62E20C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4479E59D-AC34-46A6-B454-88CA62E20C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4479E59D-AC34-46A6-B454-88CA62E20C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4479E59D-AC34-46A6-B454-88CA62E20C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888575AB-141D-4D42-9859-A10BB7706A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888575AB-141D-4D42-9859-A10BB7706A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888575AB-141D-4D42-9859-A10BB7706A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888575AB-141D-4D42-9859-A10BB7706A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FAA181A-FEE9-43E3-A39C-03A34EAC9431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAA181A-FEE9-43E3-A39C-03A34EAC9431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAA181A-FEE9-43E3-A39C-03A34EAC9431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAA181A-FEE9-43E3-A39C-03A34EAC9431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FEBCD4-E117-457B-8144-96D5C98F237B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FEBCD4-E117-457B-8144-96D5C98F237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FEBCD4-E117-457B-8144-96D5C98F237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FEBCD4-E117-457B-8144-96D5C98F237B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F303AB9-AABD-41A9-BE21-6F80C93B6D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F303AB9-AABD-41A9-BE21-6F80C93B6D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F303AB9-AABD-41A9-BE21-6F80C93B6D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F303AB9-AABD-41A9-BE21-6F80C93B6D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024D9F68-92C4-4E95-968F-6DA0A4CFE399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024D9F68-92C4-4E95-968F-6DA0A4CFE399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024D9F68-92C4-4E95-968F-6DA0A4CFE399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024D9F68-92C4-4E95-968F-6DA0A4CFE399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25B7449-3A06-44C2-999B-AA932C5EB819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25B7449-3A06-44C2-999B-AA932C5EB819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25B7449-3A06-44C2-999B-AA932C5EB819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25B7449-3A06-44C2-999B-AA932C5EB819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAEC874-4152-4865-8743-4CB6B85F15E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAEC874-4152-4865-8743-4CB6B85F15E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAEC874-4152-4865-8743-4CB6B85F15E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAEC874-4152-4865-8743-4CB6B85F15E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{850E2486-DECD-49FD-8640-1D05A73D884E} = {458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}
+		{CD3D43FF-BFC3-4F49-9F9D-0062320B1A74} = {458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}
+		{458CF6FE-6D0B-4F25-AEF0-3BF938EE951D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4479E59D-AC34-46A6-B454-88CA62E20C21} = {458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}
+		{888575AB-141D-4D42-9859-A10BB7706A51} = {458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}
+		{6FAA181A-FEE9-43E3-A39C-03A34EAC9431} = {458CF6FE-6D0B-4F25-AEF0-3BF938EE951D}
+		{33FEBCD4-E117-457B-8144-96D5C98F237B} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
+		{1F303AB9-AABD-41A9-BE21-6F80C93B6D70} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
+		{024D9F68-92C4-4E95-968F-6DA0A4CFE399} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
+		{F25B7449-3A06-44C2-999B-AA932C5EB819} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
+		{ADAEC874-4152-4865-8743-4CB6B85F15E8} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
+		{BBE5B6E0-6BDD-4954-9B81-4CCDB55F8E9C} = {D3DDA6FC-DEBB-4691-9E2B-AC5DB2706577}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B28A8B69-C93E-4C1F-967B-25EB8056FE63}
