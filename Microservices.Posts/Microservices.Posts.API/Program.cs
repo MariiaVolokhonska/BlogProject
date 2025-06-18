@@ -1,3 +1,4 @@
+using Microservices.Comments.API.Middleware;
 using Microservices.Posts.Core.Services;
 using Microservices.Posts.Domain.Interfaces;
 using Microservices.Posts.SqlServerConnection;
@@ -18,6 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

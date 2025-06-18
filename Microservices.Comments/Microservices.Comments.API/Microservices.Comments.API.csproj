@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Microservices.SharedKernel\Microservices.SharedKernel.csproj" />
     <ProjectReference Include="..\Microservices.Comments.Core\Microservices.Comments.Core.csproj" />
     <ProjectReference Include="..\Microservices.Comments.Domain\Microservices.Comments.Domain.csproj" />
     <ProjectReference Include="..\Microservices.Comments.SqlServerConnection\Microservices.Comments.SqlServerConnection.csproj" />

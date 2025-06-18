@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using Microservices.Comments.API.Middleware;
 using Microservices.Comments.Core.Services;
 using Microservices.Comments.Domain.Interfaces;
 using Microservices.Comments.Infrastructure;
@@ -27,6 +28,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

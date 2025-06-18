@@ -17,7 +17,7 @@ namespace Microservices.Comments.SqlServerConnection.Repositories
 
         public async Task<CommentModel> CreateCommentAsync(CommentModel model)
         {
-            var entity = MapToEntity(model);
+            var entity = Mapper.MapToEntity(model);
 
             await _context.Comments.AddAsync(entity);
             await _context.SaveChangesAsync();
@@ -29,15 +29,15 @@ namespace Microservices.Comments.SqlServerConnection.Repositories
         {
             var entity = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
             if (entity == null)
-                throw new ArgumentException($"Comment with ID {id} not found.");
+                throw new KeyNotFoundException($"Comment with ID {id} not found.");
 
-            return MapToModel(entity);
+            return Mapper.MapToModel(entity);
         }
 
         public async Task<IEnumerable<CommentModel>> GetAllCommentsAsync()
         {
             var entities = await _context.Comments.ToListAsync();
-            return entities.Select(MapToModel);
+            return entities.Select(Mapper.MapToModel);
         }
 
         public async Task<IEnumerable<CommentModel>> GetCommentsByPostIdAsync(Guid postId)
@@ -46,14 +46,14 @@ namespace Microservices.Comments.SqlServerConnection.Repositories
                 .Where(c => c.PostId == postId)
                 .ToListAsync();
 
-            return entities.Select(MapToModel);
+            return entities.Select(Mapper.MapToModel);
         }
 
         public async Task<CommentModel> UpdateCommentAsync(Guid id, CommentModel model)
         {
             var entity = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
             if (entity == null)
-                throw new ArgumentException($"Comment with ID {id} not found.");
+                throw new KeyNotFoundException($"Comment with ID {id} not found.");
 
             entity.Content = model.Content ?? entity.Content;
             entity.Author = model.Author ?? entity.Author;
@@ -61,39 +61,22 @@ namespace Microservices.Comments.SqlServerConnection.Repositories
             _context.Comments.Update(entity);
             await _context.SaveChangesAsync();
 
-            return MapToModel(entity);
+            return Mapper.MapToModel(entity);
         }
 
         public async Task<CommentModel> DeleteCommentAsync(Guid id)
         {
             var entity = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
             if (entity == null)
-                throw new ArgumentException($"Comment with ID {id} not found.");
+                throw new KeyNotFoundException($"Comment with ID {id} not found.");
 
             _context.Comments.Remove(entity);
             await _context.SaveChangesAsync();
 
-            return MapToModel(entity);
+            return Mapper.MapToModel(entity);
         }
 
-        private CommentModel MapToModel(CommentEntity entity)
-        {
-            return new CommentModel
-            {
-                PostId = entity.PostId,
-                Content = entity.Content,
-                Author = entity.Author
-            };
-        }
-        private CommentEntity MapToEntity(CommentModel model)
-        {
-            return new CommentEntity
-            {
-                PostId = model.PostId,
-                Author = model.Author,
-                Content = model.Content,
-            };
-        }
+       
     }
 
 }

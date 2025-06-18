@@ -17,12 +17,7 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
 
         public async Task<PostModel> CreatePostAsync(PostModel post)
         {
-            PostEntity entity = new PostEntity
-            {
-                Title = post.Title,
-                Content = post.Content,
-                Author = post.Author,
-            };
+            PostEntity entity = Mapper.MapToEntity(post);
 
             await _context.Posts.AddAsync(entity);
             await _context.SaveChangesAsync();
@@ -34,14 +29,9 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
             var postEntity = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
             if (postEntity == null)
             {
-                throw new ArgumentException("Post not found.");
+                throw new KeyNotFoundException("Post not found.");
             }
-            PostModel post = new PostModel
-            {
-                Title = postEntity.Title,
-                Content = postEntity.Content,
-                Author = postEntity.Author,
-            };
+            PostModel post = Mapper.MapToModel(postEntity);
 
             _context.Posts.Remove(postEntity);
             await _context.SaveChangesAsync();
@@ -52,12 +42,7 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
         public async Task<IEnumerable<PostModel>> GetAllPostsAsync()
         {
             var posts = await _context.Posts
-                .Select(p => new PostModel
-                {
-                    Title = p.Title,
-                    Content = p.Content,
-                    Author = p.Author,
-                })
+                .Select(p => Mapper.MapToModel(p))
                 .ToListAsync();
 
             return posts;
@@ -68,15 +53,10 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
             var post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
             if (post == null)
             {
-                throw new ArgumentException();
+                throw new KeyNotFoundException("Post not found.");
             }
 
-            PostModel postModel = new PostModel
-            {
-                Title = post.Title,
-                Content = post.Content,
-                Author = post.Author,
-            };
+            PostModel postModel = Mapper.MapToModel(post);
             return postModel;
         }
 
@@ -85,7 +65,7 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
             var postEntity = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
             if (postEntity == null)
             {
-                throw new ArgumentException("Post not found.");
+                throw new KeyNotFoundException("Post not found.");
             }
 
             var verifiedEntity = UpdateVerifier(postEntity, post);
@@ -107,3 +87,4 @@ namespace Microservices.Posts.SqlServerConnection.Repositories
         }
     }
 }
+
